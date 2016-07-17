@@ -14,3 +14,5 @@ RUN chown -R appuser:appuser $HOME/*
 USER appuser
 WORKDIR $HOME/app
 RUN npm install
+
+CMD ["npm", "start"]

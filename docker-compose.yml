@@ -1,6 +1,7 @@
 app:
   build: .
-  command: echo 'ready'
+  ports:
+    - '3002:3000'
   volumes:
     - .:/home/appuser/app
     - /home/appuser/app/node_modules
