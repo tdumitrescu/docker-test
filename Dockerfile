@@ -15,4 +15,9 @@ USER appuser
 WORKDIR $HOME/app
 RUN npm install
 
+USER root
+COPY . $HOME/app
+RUN chown -R appuser:appuser $HOME/*
+USER appuser
+
 CMD ["npm", "start"]
