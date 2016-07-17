@@ -1,14 +1,12 @@
 FROM node:argon
 
 # app dir
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+FROM node:4.4.7
 
-# src + deps
-COPY package.json /usr/src/app
-COPY src /usr/src/app/src
-RUN npm install
+RUN useradd --user-group --create-home --shell /bin/false appuser &&\
+  npm install --global npm@3.10.5
 
-EXPOSE 3000
+ENV HOME=/home/appuser
 
-CMD [ "npm", "start" ]
+USER appuser
+WORKDIR $HOME/app
