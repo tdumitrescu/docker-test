@@ -3,3 +3,4 @@ app:
   command: echo 'ready'
   volumes:
     - .:/home/appuser/app
+    - /home/appuser/app/node_modules
