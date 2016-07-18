@@ -4,7 +4,7 @@ const express = require('express');
 
 const app = express();
 app.get('/', function(req, res) {
-  res.send('LLAMAS\n');
+  res.send(`LLAMAS: ${Date()}\n`);
 });
 
 const PORT = 3000;
